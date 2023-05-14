@@ -27,7 +27,7 @@ const App = () => {
             <input type="month" required />
           </label>
           <label>CVV
-            <input placeholder="123" minLength={3} maxLength={3} required />
+            <input id="cvv" placeholder="123" minLength={3} maxLength={3} required />
           </label>
           
           
@@ -36,6 +36,8 @@ const App = () => {
         <div className="input-container">
           <input type="submit" />
         </div>
+
+        <p className="info-message"></p>
 
       </form>
     </div>
