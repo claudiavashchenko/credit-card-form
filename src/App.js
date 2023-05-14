@@ -1,4 +1,4 @@
-
+import CreditCard from "./components/CreditCard";
 
 const App = () => {
 
@@ -8,6 +8,7 @@ const App = () => {
 
   return (
     <div className="form-container">
+      <CreditCard />
       <form onSubmit={handleSubmit}>
 
         <div className="input-container">
