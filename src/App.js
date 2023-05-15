@@ -1,6 +1,21 @@
+import { useState } from "react";
+
 import CreditCard from "./components/CreditCard";
 
 const App = () => {
+
+  const currentMonth = new Date().getMonth() + 1
+  const formatting = String(currentMonth).length <= 1 ? "0" : null
+  const formattedCurrentMonth = formatting + currentMonth
+  const currentYear = new Date().getFullYear()
+
+  const [ formData, setFormData ] = useState({
+    name: "",
+    number: "",
+    date: currentYear + "-" + formattedCurrentMonth,
+    cvv: ""
+  })
+  console.log(currentYear + "-" + formattedCurrentMonth)
 
   const handleSubmit = () => {
     console.log("submitted")
