@@ -17,11 +17,13 @@ const App = () => {
   })
 
 
-  const handleSubmit = () => {
-    console.log("submitted")
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setMessage("Thank you for your custom")
   }
 
   const [side, setSide] = useState("front")
+  const [message, setMessage] = useState("Please enter your credit card details")
 
   const handleChange = (e) => {
     const name = e.target.name
@@ -74,7 +76,7 @@ const App = () => {
           <input type="submit" />
         </div>
 
-        <p className="info-message"></p>
+        <p className="info-message">{message}</p>
 
       </form>
     </div>
