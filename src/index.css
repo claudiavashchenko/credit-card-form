@@ -71,7 +71,6 @@ form .info-message {
   height: 270px;
   border-radius: 10px;
   position: relative;
-  background-color: blueviolet;
   bottom: 30px;
 }
 .credit-card .card {
@@ -100,4 +99,21 @@ form .info-message {
 .credit-card .card-details-container {
   padding: 25px;
   width: 360px;
+}
+.credit-card #cvv-display {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.credit-card #cvv-display p {
+  padding: 35px;
+  font-size: 30px;
+}
+.visa-front-side {
+  background-image: url("./images/visa-front-side.png");
+  background-size: 100%;
+}
+.visa-back-side {
+  background-image: url("./images/visa-back-side.png");
+  background-size: 100%;
 }
