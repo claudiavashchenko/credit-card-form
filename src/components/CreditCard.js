@@ -1,4 +1,22 @@
 const CreditCard = ({formData, side}) => {
+const startState = [
+    "X",
+    "X",
+    "X",
+    "X",
+    "X",
+    "X",
+    "X",
+    "X",
+    "X",
+    "X",
+    "X",
+    "X",
+    "X",
+    "X",
+    "X",
+    "X"
+]
 const getCardType = () => {
     if(formData.number.slice(0, 2) === "37" || formData.number.slice(0, 2) === "34") {
         return "amex"
@@ -30,7 +48,9 @@ const getCardType = () => {
                 
             </div>
             <div className="number-display">
-                    <h3>{formData.number}</h3>
+                    {startState.map((item, index) => (
+                        <h3 key={index}>{formData.number[index] || item}</h3>
+                    ))}
                 </div>
         </div>}
 
