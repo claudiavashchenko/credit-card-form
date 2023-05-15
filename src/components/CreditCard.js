@@ -1,7 +1,7 @@
 const CreditCard = () => {
    return (
     <div className="credit-card">
-        <div className="visa-front-side">
+        <div className="visa-front-side card">
             <div className="card-details-container">
                 <div className="detail-container">
                 <p>Expiration:</p>
@@ -19,7 +19,7 @@ const CreditCard = () => {
             </div>
         </div>
 
-        <div className="visa-back-side">
+        <div className="visa-back-side card">
             <div id="ccv-display">
                 <p>XXX</p>
             </div>
