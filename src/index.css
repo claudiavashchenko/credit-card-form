@@ -117,3 +117,19 @@ form .info-message {
   background-image: url("./images/visa-back-side.png");
   background-size: 100%;
 }
+.mastercard-front-side {
+  background-image: url("./images/mastercard-front-side.png");
+  background-size: 100%;
+}
+.mastercard-back-side {
+  background-image: url("./images/mastercard-back-side.png");
+  background-size: 100%;
+}
+.amex-front-side {
+  background-image: url("./images/amex-front-side.png");
+  background-size: 100%;
+}
+.amex-back-side {
+  background-image: url("./images/amex-back-side.png");
+  background-size: 100%;
+}
