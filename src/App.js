@@ -11,24 +11,31 @@ const App = () => {
 
   const [ formData, setFormData ] = useState({
     name: "",
-    number: "",
+    number: "1974 5624 3091 6428",
     date: currentYear + "-" + formattedCurrentMonth,
-    cvv: ""
+    cvv: "179"
   })
-  console.log(currentYear + "-" + formattedCurrentMonth)
+
 
   const handleSubmit = () => {
     console.log("submitted")
   }
 
+  const handleChange = (e) => {
+    const name = e.target.name
+    const value =  e.target.value
+
+    setFormData({...formData, [name] : value})
+  }
+
   return (
     <div className="form-container">
-      <CreditCard />
+      <CreditCard formData={formData} />
       <form onSubmit={handleSubmit}>
 
         <div className="input-container">
         <label>Name on card
-          <input placeholder="name" required />
+          <input name="name" value={formData.name} placeholder="name" required onChange={handleChange}/>
         </label>
         </div>
 
