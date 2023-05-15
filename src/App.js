@@ -11,9 +11,9 @@ const App = () => {
 
   const [ formData, setFormData ] = useState({
     name: "",
-    number: "1974 5624 3091 6428",
+    number: "",
     date: currentYear + "-" + formattedCurrentMonth,
-    cvv: "179"
+    cvv: ""
   })
 
 
@@ -21,16 +21,30 @@ const App = () => {
     console.log("submitted")
   }
 
+  const [side, setSide] = useState("front")
+
   const handleChange = (e) => {
     const name = e.target.name
-    const value =  e.target.value
+    let value =  e.target.value
 
+
+
+    if (name === "cvv" || name === "number") {
+      value = value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1')
+    }
     setFormData({...formData, [name] : value})
+
+    if(name === "cvv") {
+      setSide("back")
+      return
+    }
+      setSide("front")
+  
   }
 
   return (
     <div className="form-container">
-      <CreditCard formData={formData} />
+      <CreditCard formData={formData} side={side} />
       <form onSubmit={handleSubmit}>
 
         <div className="input-container">
@@ -41,16 +55,16 @@ const App = () => {
 
         <div className="input-container">
         <label>Card number
-          <input placeholder="0000 0000 0000 0000" minLength={16} maxLength={16} required />
+          <input name="number" value={formData.number} placeholder="0000 0000 0000 0000" minLength={16} maxLength={16} required onChange={handleChange} />
         </label>
         </div>
 
         <div className="supporting-inputs-container">
           <label>Expiration date
-            <input type="month" required />
+            <input name="date" value={formData.date} type="month" required onChange={handleChange} />
           </label>
           <label>CVV
-            <input id="cvv" placeholder="123" minLength={3} maxLength={3} required />
+            <input name="cvv" value={formData.cvv} id="cvv" placeholder="123" minLength={3} maxLength={3} required onChange={handleChange} />
           </label>
           
           
